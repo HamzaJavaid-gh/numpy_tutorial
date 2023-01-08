@@ -19,3 +19,11 @@ def cat_cross_entropy(y_true, y_pred):
     return loss
 
 
+def kl_divergence(y_true, y_pred):
+    y_out = y_true*np.log2(y_true/y_pred)
+    return y_out
+
+def js_divergence(y_true, y_pred):
+    m_val = 1/(2*(y_true+y_pred))
+    y_out = 0.5 * kl_divergence(y_true, m_val) + 0.5 * kl_divergence(y_pred, m_val)
+    return y_out
