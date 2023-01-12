@@ -48,7 +48,7 @@ print(arr_con3)
 
 
 # exrcises for conditionals within the array
-
+# 1D array
 arr_1d = np.arange(10,20,1)
 
 arr_con = arr_1d[arr_1d>15]  #equivalent to arr_1d = arr_1d[np.where(arr_1d>15)]
@@ -60,8 +60,45 @@ arr_1d[arr_1d<15] = 0
 print(arr_1d)
 
 
-# arr_1 = np.arange(9).reshape(3,3)
-# print(arr_1)
-#
-# arr_1_sec = np.where(arr_1>4)
-# print(arr_1_sec)
+# 2D Arrays
+
+arr_2d = np.arange(1,10,1).reshape(3,3)
+print(arr_2d)
+
+# use np.where
+arr_mid_ind = np.where(arr_2d>5)
+print(arr_2d[arr_mid_ind])
+# use only the condition
+arr_mid_ind = arr_2d[arr_2d > 5]
+print(arr_mid_ind)
+
+# now set all the elements
+arr_set_2d = np.where(arr_2d>5,2,arr_2d)
+print(arr_set_2d)
+# with simple conditionals
+arr_2d[arr_2d>5] = 2
+print(arr_2d)
+
+
+# 3D array
+
+arr_3d = np.arange(1,9,1).reshape(2,2,2)
+print(arr_3d)
+
+# use np.ehre to perform conditionals
+
+arr_3d_mid = np.where(arr_3d>5)
+print(arr_3d[arr_3d_mid])
+
+# use simple conditionals to do the same
+
+set_arr = arr_3d[arr_3d>5]
+print(set_arr)
+
+# Now do the set and return the original elements as well
+
+arr_mid = np.where(arr_3d>5,2,arr_3d)
+print(arr_mid)
+# do with conditional
+arr_3d[arr_3d>5] = 2
+print(arr_3d)
