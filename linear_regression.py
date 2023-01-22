@@ -2,7 +2,7 @@
    to show the process of gradient descent"""
 
 
-"""Linear Regression Equation output = bias + (weight*input) +eta """
+"""Linear Regression Equation output = bias + (weight*input) + eta """
 
 import numpy as np
 """STEP 1: First we will generate custom training data and select true values for bias and weight"""
@@ -44,6 +44,8 @@ initial_weight = 5.5
 n_epochs = 100
 lr = 0.001
 
+'''STEP 2: The training loop'''
+
 for i in range(n_epochs):
 
     # STEP 1 Forward pass
@@ -58,7 +60,6 @@ for i in range(n_epochs):
     grad_W = 2 * (x_train*(y_hat - y_train)).mean()
 
     #STEP 4 Update params with optimizer (gradient descent)
-
     initial_bias = initial_bias - (lr * grad_b)
     initial_weight = initial_weight - (lr * grad_W)
 
