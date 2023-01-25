@@ -35,3 +35,13 @@ print(uniq_vals)
 uniq_with_occurance = np.unique(stacked_arr_2d, return_counts=True)
 print(uniq_with_occurance)
 
+
+# Excerise 3 create a numpy array with dimensions (3,12,12=c,h,w) and convert the same array in opencv nd array (12,12,3=h,w,c)
+
+arr_3d_inp = np.zeros((3,4,5)) + 7   #source shape is (3,4,5) target shape should be (4,5,3)
+
+arr_3d_mov1 = np.moveaxis(arr_3d_inp,0,2) #source is now (4,5,3)
+print(arr_3d_mov1.shape)
+
+
+

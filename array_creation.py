@@ -82,3 +82,8 @@ ones_arr = np.ones_like(simple_arr) #imp for image processing applications
 zeros_arr = np.zeros_like(simple_arr)
 
 
+# Create 3D array and familiar with generic and image based channel format
+arr_3d = np.zeros((5,2,2)).reshape(2,2,5)
+print(arr_3d)
+# np default arrays are always in format of c,h,w however the opencv arrays read in ndarry object are read in h,wc
+
